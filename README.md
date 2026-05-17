@@ -1,58 +1,108 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Student Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based Student Management System developed for academic lab work.  
+This project provides a simple web management system for managing students, subjects, lecture halls, days, lecturer groups, and timetable entries. The system also includes authentication, AdminLTE dashboard integration, CRUD operations, validation, route protection, dummy data seeding, and admin profile management.
 
-## About Laravel
+![Dashboard Screenshot](screenshots/dashboard.png)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+![Screenshot](screenshots/userprofile.png)
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📌 Project Overview
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This system is designed as a web-based management platform for academic timetable and student data administration.
 
-## Learning Laravel
+The system separates:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Admin/User account**: Used only for login and system access.
+- **Student records**: Managed separately through the Student CRUD module.
+- **Timetable lecturer data**: Retrieved from the lecturer name stored in the Subject module.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+This separation ensures that registered admin users do not appear inside the Student List.
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## 🚀 Features
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+### Authentication
+- Admin login
+- Register account
+- Logout function
+- Protected routes for logged-in users
 
-```bash
-composer require laravel/boost --dev
+### Dashboard
+- AdminLTE dashboard layout
+- Sidebar navigation
+- User dropdown menu
+- Admin profile display
+- Dashboard card shortcut
 
-php artisan boost:install
-```
+### Student Management
+- Add student
+- View student list
+- View student details
+- Edit student
+- Delete student
+- Student data stored separately from admin login users
+- Student email format example: `name@student.edu.my`
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### Subject Management
+- Add subject
+- View subject list
+- Edit subject
+- Delete subject
+- Store lecturer name for each subject
 
-## Contributing
+### Hall Management
+- Add lecture hall
+- View hall list
+- Edit hall
+- Delete hall
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Day Management
+- Add day
+- View day list
+- Edit day
+- Delete day
 
-## Code of Conduct
+### Lecturer Group Management
+- Add lecturer group
+- View group list
+- Edit group
+- Delete group
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Timetable Management
+- Add timetable entry
+- View timetable entries
+- Edit timetable entry
+- Delete timetable entry
+- Select lecturer name based on subject list
+- Display lecturer name in timetable entries
+- Hall conflict validation
 
-## Security Vulnerabilities
+### Admin Profile
+- Edit admin name
+- Edit admin email
+- Change password
+- Upload/change profile picture
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 📂 Main Modules
+
+| Module | Description |
+|---|---|
+| Authentication | Admin login and registration |
+| Dashboard | AdminLTE dashboard interface |
+| Students | Manage student records |
+| Subjects | Manage subjects and lecturer names |
+| Halls | Manage lecture halls |
+| Days | Manage class days |
+| Groups | Manage lecturer groups |
+| Timetables | Manage timetable entries |
+| Profile | Manage admin profile |
+
+---
+
