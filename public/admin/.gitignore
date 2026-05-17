@@ -40,3 +40,9 @@ ad.js
 /.cache/
 CLAUDE.md
 github-issue-response.md
+
+.env
+/vendor
+/node_modules
+/storage/*.key
+/storage/logs/*.log
