@@ -5,7 +5,7 @@ This project provides a simple web management system for managing students, subj
 
 ![Dashboard Screenshot](screenshots/dashboard.png)
 
-![Screenshot](screenshots/userprofile.png)
+![User Profile Screenshot](screenshots/userprofile.png)
 ---
 
 ## 📌 Project Overview
