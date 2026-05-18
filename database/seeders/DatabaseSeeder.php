@@ -84,27 +84,27 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $student2 = Student::create([
-            'name' => 'Nur Aina',
-            'email' => 'aina@student.edu.my',
+            'name' => 'Haziq Naqib',
+            'email' => 'haziq@student.edu.my',
             'age' => '22',
             'phone_number' => '0123456789',
-            'address' => 'Shah Alam',
+            'address' => 'Taman Universiti',
         ]);
 
         $student3 = Student::create([
-            'name' => 'Muhammad Danish',
-            'email' => 'danish@student.edu.my',
+            'name' => 'Ameen Akeef',
+            'email' => 'ameen@student.edu.my',
             'age' => '23',
             'phone_number' => '0134567890',
-            'address' => 'Melaka',
+            'address' => 'Segamat',
         ]);
 
         $student4 = Student::create([
-            'name' => 'Sofia Iman',
-            'email' => 'sofia@student.edu.my',
+            'name' => 'Akmal Asri',
+            'email' => 'akmal@student.edu.my',
             'age' => '21',
             'phone_number' => '0145678901',
-            'address' => 'Seremban',
+            'address' => 'Larkin',
         ]);
 
         /*
@@ -117,13 +117,13 @@ class DatabaseSeeder extends Seeder
         $subject1 = Subject::create([
             'subject_code' => 'ITT626',
             'subject_name' => 'Web Application Development',
-            'lecturer_name' => 'Dr. Farah Nabilah',
+            'lecturer_name' => 'Idayati Binti Mazlan',
         ]);
 
         $subject2 = Subject::create([
             'subject_code' => 'ICT602',
             'subject_name' => 'Mobile Technology',
-            'lecturer_name' => 'Puan Aisyah Hamid',
+            'lecturer_name' => 'Idayati Binti Mazlan',
         ]);
 
         $subject3 = Subject::create([
