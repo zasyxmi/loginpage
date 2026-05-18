@@ -8,7 +8,7 @@
 @php
     $profilePhoto = $user->profile_photo
         ? asset('storage/' . $user->profile_photo)
-        : asset('admin/dist/assets/img/user1-128x128.jpg');
+        : asset('admin/dist/assets/img/user2-160x160.jpg');
 @endphp
 
 <div class="row">
