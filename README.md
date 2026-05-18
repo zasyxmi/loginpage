@@ -1,41 +1,33 @@
 # Student Management System
 
-A Laravel-based Student Management System developed for academic lab work.  
-This project provides a simple web management system for managing students, subjects, lecture halls, days, lecturer groups, and timetable entries. The system also includes authentication, AdminLTE dashboard integration, CRUD operations, validation, route protection, dummy data seeding, and admin profile management.
+A Laravel-based Student Management System developed for academic lab work using Laravel, MySQL, Laragon, Blade, Bootstrap, and AdminLTE.
 
-![Dashboard Screenshot](screenshots/dashboard.png)
-
-![User Profile Screenshot](screenshots/userprofile.png)
----
-
-## 📌 Project Overview
-
-This system is designed as a web-based management platform for academic timetable and student data administration.
-
-The system separates:
-
-- **Admin/User account**: Used only for login and system access.
-- **Student records**: Managed separately through the Student CRUD module.
-- **Timetable lecturer data**: Retrieved from the lecturer name stored in the Subject module.
-
-This separation ensures that registered admin users do not appear inside the Student List.
+This system is designed to manage student records, subjects, lecture halls, days, lecturer groups, and timetable entries through a clean admin dashboard interface.
 
 ---
 
-## 🚀 Features
+## Features
 
 ### Authentication
 - Admin login
 - Register account
 - Logout function
-- Protected routes for logged-in users
+- Route protection for authenticated users
 
 ### Dashboard
 - AdminLTE dashboard layout
 - Sidebar navigation
 - User dropdown menu
-- Admin profile display
-- Dashboard card shortcut
+- Dashboard quick action cards
+- Background image from AdminLTE asset
+- Counts for students, subjects, halls, days, groups, and timetable entries
+
+### Admin Profile
+- Edit admin name
+- Edit admin email
+- Change password
+- Upload/change profile picture
+- User dropdown displays current admin name and email
 
 ### Student Management
 - Add student
@@ -43,12 +35,13 @@ This separation ensures that registered admin users do not appear inside the Stu
 - View student details
 - Edit student
 - Delete student
-- Student data stored separately from admin login users
-- Student email format example: `name@student.edu.my`
+- Student records are stored in the `students` table
+- Student email format uses `@student.edu.my`
 
 ### Subject Management
 - Add subject
 - View subject list
+- View subject details
 - Edit subject
 - Delete subject
 - Store lecturer name for each subject
@@ -56,53 +49,49 @@ This separation ensures that registered admin users do not appear inside the Stu
 ### Hall Management
 - Add lecture hall
 - View hall list
+- View hall details
 - Edit hall
 - Delete hall
 
 ### Day Management
 - Add day
 - View day list
+- View day details
 - Edit day
 - Delete day
 
 ### Lecturer Group Management
 - Add lecturer group
 - View group list
+- View group details
 - Edit group
 - Delete group
 
 ### Timetable Management
 - Add timetable entry
 - View timetable entries
+- View timetable details
 - Edit timetable entry
 - Delete timetable entry
-- Select lecturer name based on subject list
-- Display lecturer name in timetable entries
+- Select student from `students` table
+- Select subject and lecturer from `subjects` table
+- Select day, hall, and lecturer group
+- Display created date/time
+- Display last updated date/time
 - Hall conflict validation
 
-### Admin Profile
-- Edit admin name
-- Edit admin email
-- Change password
-- Upload/change profile picture
-
 ---
 
----
-
-## 📂 Main Modules
+## Main Modules
 
 | Module | Description |
 |---|---|
-| Authentication | Admin login and registration |
-| Dashboard | AdminLTE dashboard interface |
+| Authentication | Admin login, registration, and logout |
+| Dashboard | Main admin dashboard using AdminLTE |
+| Admin Profile | Manage admin profile details |
 | Students | Manage student records |
 | Subjects | Manage subjects and lecturer names |
 | Halls | Manage lecture halls |
 | Days | Manage class days |
 | Groups | Manage lecturer groups |
 | Timetables | Manage timetable entries |
-| Profile | Manage admin profile |
-
----
-
