@@ -15,6 +15,12 @@
             @method('PUT')
 
             <div class="card-body">
+                @if(session('error'))
+                    <div class="alert alert-warning">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
                 @if($errors->any())
                     <div class="alert alert-danger">
                         <ul class="mb-0">
@@ -28,13 +34,25 @@
                 <div class="row">
 
                     <div class="col-md-6 mb-3">
+                        <label class="form-label">Student</label>
+                        <select name="student_id" class="form-control">
+                            <option value="">-- Select Student --</option>
+                            @foreach($students as $student)
+                                <option value="{{ $student->id }}" @selected(old('student_id', $timetable->student_id) == $student->id)>
+                                    {{ $student->name }} - {{ $student->email }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Subject / Lecturer</label>
                         <select name="subject_id" class="form-control">
-                            <option value="">-- Select Lecturer Name --</option>
+                            <option value="">-- Select Subject / Lecturer --</option>
                             @foreach($subjects as $subject)
                                 <option value="{{ $subject->id }}" @selected(old('subject_id', $timetable->subject_id) == $subject->id)>
-                                    {{ $subject->lecturer_name ?? 'No Lecturer' }} - {{ $subject->subject_code }} -
-                                    {{ $subject->subject_name }}
+                                    {{ $subject->subject_code }} - {{ $subject->subject_name }} -
+                                    {{ $subject->lecturer_name ?? 'No Lecturer' }}
                                 </option>
                             @endforeach
                         </select>

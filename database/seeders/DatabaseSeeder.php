@@ -75,7 +75,7 @@ class DatabaseSeeder extends Seeder
         | Semua student email guna domain @student.edu.my
         */
 
-        Student::create([
+        $student1 = Student::create([
             'name' => 'Rafiq Syah',
             'email' => 'rafiq@student.edu.my',
             'age' => '21',
@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
             'address' => 'Kuala Lumpur',
         ]);
 
-        Student::create([
+        $student2 = Student::create([
             'name' => 'Nur Aina',
             'email' => 'aina@student.edu.my',
             'age' => '22',
@@ -91,7 +91,7 @@ class DatabaseSeeder extends Seeder
             'address' => 'Shah Alam',
         ]);
 
-        Student::create([
+        $student3 = Student::create([
             'name' => 'Muhammad Danish',
             'email' => 'danish@student.edu.my',
             'age' => '23',
@@ -99,7 +99,7 @@ class DatabaseSeeder extends Seeder
             'address' => 'Melaka',
         ]);
 
-        Student::create([
+        $student4 = Student::create([
             'name' => 'Sofia Iman',
             'email' => 'sofia@student.edu.my',
             'age' => '21',
@@ -201,11 +201,12 @@ class DatabaseSeeder extends Seeder
         |--------------------------------------------------------------------------
         | Timetable Entries
         |--------------------------------------------------------------------------
-        | Tiada student_id/user_id digunakan.
+        | Student timetable selection guna students table melalui student_id.
         | Lecturer name akan datang daripada subject yang dipilih.
         */
 
         Timetable::create([
+            'student_id' => $student1->id,
             'subject_id' => $subject1->id,
             'day_id' => $monday->id,
             'hall_id' => $hall1->id,
@@ -215,6 +216,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Timetable::create([
+            'student_id' => $student2->id,
             'subject_id' => $subject2->id,
             'day_id' => $tuesday->id,
             'hall_id' => $hall2->id,
@@ -224,6 +226,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Timetable::create([
+            'student_id' => $student3->id,
             'subject_id' => $subject3->id,
             'day_id' => $wednesday->id,
             'hall_id' => $hall3->id,
@@ -233,6 +236,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Timetable::create([
+            'student_id' => $student4->id,
             'subject_id' => $subject4->id,
             'day_id' => $thursday->id,
             'hall_id' => $hall4->id,

@@ -14,7 +14,7 @@ class StoreTimetableRequest extends FormRequest
     public function rules(): array
     {
         return [
-            
+            'student_id' => ['required', 'exists:students,id'],
             'subject_id' => ['required', 'exists:subjects,id'],
             'day_id' => ['required', 'exists:days,id'],
             'hall_id' => ['required', 'exists:halls,id'],
@@ -27,7 +27,7 @@ class StoreTimetableRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'user_id.required' => 'Please select a student.',
+            'student_id.required' => 'Please select a student.',
             'subject_id.required' => 'Please select a subject.',
             'day_id.required' => 'Please select a day.',
             'hall_id.required' => 'Please select a hall.',

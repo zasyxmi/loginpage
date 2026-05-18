@@ -14,6 +14,7 @@ class UpdateTimetableRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'student_id' => ['required', 'exists:students,id'],
             'subject_id' => ['required', 'exists:subjects,id'],
             'day_id' => ['required', 'exists:days,id'],
             'hall_id' => ['required', 'exists:halls,id'],

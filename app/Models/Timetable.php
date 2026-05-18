@@ -10,7 +10,7 @@ class Timetable extends Model
     protected $table = 'student_timetables';
 
     protected $fillable = [
-        
+        'student_id',
         'subject_id',
         'day_id',
         'hall_id',
@@ -21,7 +21,7 @@ class Timetable extends Model
 
     public function student(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(Student::class);
     }
 
     public function subject(): BelongsTo

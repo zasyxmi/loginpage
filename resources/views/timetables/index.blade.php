@@ -22,6 +22,7 @@
             <thead>
             <tr>
                 <th>ID</th>
+                <th>Student</th>
                 <th>Lecturer</th>
                 <th>Subject</th>
                 <th>Day</th>
@@ -35,8 +36,19 @@
             @forelse($timetables as $timetable)
                 <tr>
                     <td>{{ $timetable->id }}</td>
+                    <td>
+                        {{ $timetable->student?->name ?? '-' }}
+                        @if($timetable->student?->email)
+                            <br><small class="text-muted">{{ $timetable->student->email }}</small>
+                        @endif
+                    </td>
                     <td>{{ $timetable->subject?->lecturer_name ?? '-' }}</td>
-                    <td>{{ $timetable->subject?->subject_name ?? '-' }}</td>
+                    <td>
+                        {{ $timetable->subject?->subject_code ?? '-' }}
+                        @if($timetable->subject?->subject_name)
+                            <br><small class="text-muted">{{ $timetable->subject->subject_name }}</small>
+                        @endif
+                    </td>
                     <td>{{ $timetable->day?->day_name ?? '-' }}</td>
                     <td>{{ $timetable->time_from }} - {{ $timetable->time_to }}</td>
                     <td>{{ $timetable->hall?->lecture_hall_name ?? '-' }}</td>
@@ -55,7 +67,7 @@
                     </td>
                 </tr>
             @empty
-                <tr><td colspan="8" class="text-center">No timetable entries found.</td></tr>
+                <tr><td colspan="9" class="text-center">No timetable entries found.</td></tr>
             @endforelse
             </tbody>
         </table>
