@@ -53,8 +53,11 @@ class SubjectController extends Controller
 
     public function destroy(Subject $subject): RedirectResponse
     {
+        $subject->timetables()->delete();
         $subject->delete();
 
-        return redirect()->route('subjects.index')->with('success', 'Subject deleted successfully.');
+        return redirect()
+            ->route('subjects.index')
+            ->with('success', 'Subject and related timetable entries deleted successfully.');
     }
 }
