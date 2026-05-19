@@ -8,9 +8,7 @@
 @push('styles')
 <style>
     body.dashboard-bg .app-main {
-        background-image:
-            linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
-            url("{{ asset('admin/dist/assets/img/photo1.png') }}");
+       
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
