@@ -94,16 +94,36 @@
                         </select>
                     </div>
 
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Time From</label>
-                        <input type="time" name="time_from" class="form-control"
-                            value="{{ old('time_from', $timetable->time_from) }}">
+                        <input
+                            type="time"
+                            name="time_from"
+                            lang="en-GB"
+                            class="form-control form-control-lg"
+                            value="{{ old('time_from', $timetable->time_from) }}"
+                            step="1800"
+                            onclick="this.showPicker && this.showPicker()"
+                            onfocus="this.showPicker && this.showPicker()"
+                            required
+                        >
+                        <small class="form-text text-muted">Select class start time</small>
                     </div>
 
-                    <div class="col-md-3 mb-3">
+                    <div class="col-md-6 mb-3">
                         <label class="form-label">Time To</label>
-                        <input type="time" name="time_to" class="form-control"
-                            value="{{ old('time_to', $timetable->time_to) }}">
+                        <input
+                            type="time"
+                            name="time_to"
+                            lang="en-GB"
+                            class="form-control form-control-lg"
+                            value="{{ old('time_to', $timetable->time_to) }}"
+                            step="1800"
+                            onclick="this.showPicker && this.showPicker()"
+                            onfocus="this.showPicker && this.showPicker()"
+                            required
+                        >
+                        <small class="form-text text-muted">Select class end time</small>
                     </div>
                 </div>
             </div>
