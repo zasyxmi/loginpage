@@ -38,10 +38,10 @@
                     <td>
                         <a href="{{ route('subjects.show', $subject) }}" class="btn btn-info btn-sm">View</a>
                         <a href="{{ route('subjects.edit', $subject) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <form action="{{ route('subjects.destroy', $subject) }}" method="POST" style="display:inline;">
+                        <form action="{{ route('subjects.destroy', $subject) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this subject?\n\nAll timetable entries related to this subject will also be deleted.\n\nRelated timetable entries: {{ $subject->timetables_count ?? 0 }}')">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-danger btn-sm" onclick="return confirm('Delete this subject?')">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                         </form>
                     </td>
                 </tr>
