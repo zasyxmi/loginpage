@@ -13,7 +13,7 @@ class SubjectController extends Controller
 {
     public function index(): View
     {
-        $subjects = Subject::withCount('timetables')->latest()->get();
+        $subjects = Subject::withCount('timetables')->oldest()->get();
 
         return view('subjects.index', compact('subjects'));
     }

@@ -18,7 +18,7 @@ class TimetableController extends Controller
     public function index(): View
     {
         $timetables = Timetable::with(['student', 'subject', 'day', 'hall', 'lecturerGroup'])
-            ->latest()
+            ->oldest()
             ->get();
 
         return view('timetables.index', compact('timetables'));

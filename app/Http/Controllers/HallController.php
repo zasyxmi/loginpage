@@ -13,7 +13,7 @@ class HallController extends Controller
 {
     public function index(): View
     {
-        $halls = Hall::latest()->get();
+        $halls = Hall::oldest()->get();
 
         return view('halls.index', compact('halls'));
     }

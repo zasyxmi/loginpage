@@ -13,7 +13,7 @@ class LecturerGroupController extends Controller
 {
 public function index(): View
 {
-    $groups = LecturerGroup::latest()->get();
+    $groups = LecturerGroup::oldest()->get();
 
     return view('groups.index', compact('groups'));
 }

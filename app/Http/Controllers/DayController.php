@@ -13,7 +13,7 @@ class DayController extends Controller
 {
     public function index(): View
     {
-        $days = Day::latest()->get();
+        $days = Day::oldest()->get();
 
         return view('days.index', compact('days'));
     }

@@ -12,7 +12,7 @@ class StudentController extends Controller
 {
     public function index(): View
     {
-        $students = Student::latest()->get();
+        $students = Student::oldest()->get();
 
         return view('students.index', compact('students'));
     }
